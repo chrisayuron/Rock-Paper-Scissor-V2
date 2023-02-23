@@ -16,19 +16,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .gameboard{
     background-color:rgba(245, 222, 179, 0.604);
-    min-height: 70vh;
-    min-width: 70vw;
+    height: 450px;
+    width: 600px;
+    position: relative;
+}
+.input__games{
+    position: absolute;
+    top: 0;
+}
+.input__games input{
+    width: 50px;
 }
 
 .boton{
-    min-height: 10vh;
-    min-width: 10vw;
-    max-height: 10vh;
-    max-width: 10vw;
+    height: 100px;
+    width: 150px;
     border: solid 1px black;
     background-color: gray;
     cursor: pointer;
@@ -36,20 +43,77 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 50%;
+    font-size: 25px;
+    font-weight: 600;
     border-radius: 10px;
-  
 }
 
 .play{
-    min-width: 20vw;
-    max-width: 20vw;
-    margin: 1vh auto;   
+    width: 150px;
+    margin: 25px auto;
 }
-
 .gameboard__button{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    visibility: hidden;    
+    
 }
 
+.piedra{
+    background-image: url("./assets/piedra.jpg");
+}
+.papel{
+    background-image: url("./assets/papel.jpg");
+}
+.tijera{
+    background-image: url("./assets/tijera.jpg");
+}
+.piedra,.papel,.tijera{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.gameboard__result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    visibility: hidden;
+}
+.gameboard__result__item{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: solid 1px black;
+    height: 50px;
+    width: 100px;
+    border: solid 1px black;
+}
+.points{
+  height: 100%;
+  width: 100%;
+  outline: solid 1px black;
+  border: solid 1px black;
+}
+
+.anuncement{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    height: 100px;
+    background-color: red;
+    border: solid 1px black;
+    width: 100%;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white
+}
 @media (max-width:700px){
   
 }

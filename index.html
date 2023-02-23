@@ -10,15 +10,30 @@
 <body>
     <main class="gameboard">
     <div id="play" class="play boton">JUGAR</div>
-    <div class="gameboard__button">
-        <div id="stone" class="piedra boton">Piedra</div>
-        <div id="paper" class="papel boton">Papel</div>
-        <div id="scissor" class="tijera boton">Tijera</div>
+    <div class="input__games">
+        Juegos <input type="number" id="juegos" min="0">    
+    </div> 
+    
+    <div class="gameboard__button" id="gameboard__button">
+        <div id="stone" class="piedra boton"></div>
+        <div id="paper" class="papel boton"></div>
+        <div id="scissor" class="tijera boton"></div>
     </div>
-    <div class="gameboard__result">
+    <div class="gameboard__result" id="gameboard__result">
+        <div class="gameboard__result__item">
+        <p>HUMAN</p>
         <label for="" class="points" id="human"></label>
+        </div>
+        <div class="gameboard__result__item">
+        <p>MACHINE</p>
         <label for="" class="points" id="machine"></label>
+        </div>
+        <div class="gameboard__result__item">
+            <p>TIE</p>
+            <label for="" class="points" id="tie"></label>
+            </div>
     </div>
+    <div id="anuncement" class="anuncement"></div>
 </main>
 </body>
 </html>
