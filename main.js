@@ -8,12 +8,16 @@ const tphuman=document.getElementById('human')
 const tpmachine=document.getElementById('machine')
 const tptie=document.getElementById('tie')
 const anuncio=document.getElementById('anuncement')
-let cant=parseInt(document.getElementById('juegos').value)
+let cantj=document.getElementById('juegos')
 let pmachine=0
 let puser=0
 let ptie=0
+let cant=0
 const opciones=['piedra','papel','tijera']
 play.addEventListener('click',()=>{
+    cant=parseInt(cantj.value)
+    cantj.value=''
+    cantj.style.visibility='hidden'
     botones.style.visibility='visible'
     resultados.style.visibility='visible'
     anuncio.style.visibility='hidden'
@@ -79,11 +83,11 @@ function elegir(user){
 
 function mostrarGanador(){
         botones.style.visibility='hidden'
-        resultados.style.visibility='hidden'
-        if (tphuman>tpmachine){
-           anuncio.innerHTML=`<h2>Ganador USER</h2>`
+        
+        if (puser>pmachine){
+           anuncio.innerHTML=`<h    2>Ganador USER</h2>`
            anuncio.style.visibility='visible'
-        }else if(tphuman>tpmachine){
+        }else if(puser>pmachine){
             anuncio.innerHTML=`<h2>Ganador MACHINE</h2>`
             anuncio.style.visibility='visible'
         }else{
@@ -93,8 +97,11 @@ function mostrarGanador(){
         pmachine=0
         puser=0
         ptie=0
+        
         play.style.visibility='visible'
+        cantj.style.visibility='visible'
         setTimeout(ocultarAnuncio,5000)
+        
     }
 
 function chooseMachine(){
